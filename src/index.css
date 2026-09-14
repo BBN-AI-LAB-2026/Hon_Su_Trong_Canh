@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F7F2E7;
+  color: #2A1A0F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  /* Kết cấu giấy dó cổ truyền với vân sợi ấm áp */
+  background-image: 
+    radial-gradient(#D6C2A6 0.8px, transparent 0.8px),
+    radial-gradient(#DECBAE 0.6px, #F7F2E7 0.6px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Heritage Typography Styles */
+.font-heritage {
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-title {
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-body {
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.65;
+}
+
+.font-modern {
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.heritage-border {
+  border: 1.5px solid #D6C3A8;
+  box-shadow: 0 0 0 3px #FAF6EE, 0 0 0 4.5px #D6C3A8;
+}
+
+.heritage-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #8E201B;
+  color: #8E201B;
+  background: rgba(142, 32, 27, 0.05);
+  font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Cổ thư - Khung giấy xưa */
+.parchment-sheet {
+  background: linear-gradient(180deg, #FCFAF5 0%, #FAF5EB 100%);
+  border: 1px solid #D8C5AA;
+  box-shadow: 0 4px 20px rgba(50, 26, 15, 0.06), 0 1px 3px rgba(50, 26, 15, 0.04);
+  position: relative;
+}
+
+/* Dải chỉ vàng hoàng gia */
+.gold-trim {
+  border-image: linear-gradient(to right, #DEC067, #C59B27, #DEC067) 1;
+}
+
+/* Custom scrollbar for museum aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EFE8DC;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4B196;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A8062;
+}

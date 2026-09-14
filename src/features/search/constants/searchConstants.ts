@@ -1,0 +1,16 @@
+export const POPULAR_SUGGESTIONS = [
+  'Chợ Bến Thành',
+  'Văn Miếu Quốc Tử Giám',
+  'Dinh Độc Lập',
+  'Cố đô Huế',
+  'Bến Nhà Rồng',
+  'Địa đạo Củ Chi',
+  'Cầu Hiền Lương',
+  'Thành Cổ Quảng Trị',
+  'Đền Hùng',
+  'Chùa Một Cột',
+  'Nhà Thờ Đức Bà',
+  'Thánh Địa Mỹ Sơn',
+  'Lăng Bác',
+  'Nhà Tù Côn Đảo',
+];

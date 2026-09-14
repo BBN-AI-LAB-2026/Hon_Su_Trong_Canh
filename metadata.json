@@ -1,0 +1,11 @@
+{
+  "name": "Hồn Sử Trong Cảnh (v4)",
+  "description": "By BBN AI LAB --- Date: Sep, 2026",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

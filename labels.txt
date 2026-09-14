@@ -1,0 +1,14 @@
+BNR	Bến Nhà Rồng
+CBT	Chợ Bến Thành
+CMC	Chùa Một Cột
+CauHienLuong	Cầu Hiền Lương - Sông Bến Hải
+DDCC	Địa đạo Củ Chi
+DenHung	Đền Hùng
+DinhDocLap	Dinh Độc Lập
+LangChuTichHCM	Lăng Chủ tịch Hồ Chí Minh
+NgoMon	Cố đô Huế (Ngọ Môn)
+NhaThoDB	Nhà Thờ Đức Bà
+NTCD	Nhà Tù Côn Đảo
+TDiaMS	Thánh Địa Mỹ Sơn
+ThanhCoQT	Thành Cổ Quảng Trị
+VanMieuQTG	Văn Miếu Quốc Tử Giám

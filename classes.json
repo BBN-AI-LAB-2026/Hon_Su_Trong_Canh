@@ -1,0 +1,16 @@
+[
+  { "index": 0, "code": "BNR", "name": "Bến Nhà Rồng" },
+  { "index": 1, "code": "CBT", "name": "Chợ Bến Thành" },
+  { "index": 2, "code": "CMC", "name": "Chùa Một Cột" },
+  { "index": 3, "code": "CauHienLuong", "name": "Cầu Hiền Lương - Sông Bến Hải" },
+  { "index": 4, "code": "DDCC", "name": "Địa đạo Củ Chi" },
+  { "index": 5, "code": "DenHung", "name": "Đền Hùng" },
+  { "index": 6, "code": "DinhDocLap", "name": "Dinh Độc Lập" },
+  { "index": 7, "code": "LangChuTichHCM", "name": "Lăng Chủ tịch Hồ Chí Minh" },
+  { "index": 8, "code": "NgoMon", "name": "Cố đô Huế (Ngọ Môn)" },
+  { "index": 9, "code": "NhaThoDB", "name": "Nhà Thờ Đức Bà" },
+  { "index": 10, "code": "NTCD", "name": "Nhà Tù Côn Đảo" },
+  { "index": 11, "code": "TDiaMS", "name": "Thánh Địa Mỹ Sơn" },
+  { "index": 12, "code": "ThanhCoQT", "name": "Thành Cổ Quảng Trị" },
+  { "index": 13, "code": "VanMieuQTG", "name": "Văn Miếu Quốc Tử Giám" }
+]
