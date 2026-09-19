@@ -1,2 +1,2 @@
-# Thêm các API Key Gemini của bạn vào file này (mỗi dòng 1 key)
-# File này đã được thêm vào .gitignore để không bị đẩy lên GitHub.
+# See the example at API_Key_List_example.txt
+# Caution: The API Key in the file would could not active.
