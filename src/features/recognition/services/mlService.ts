@@ -1,4 +1,5 @@
 import { storageService } from '../../../core/services/storage';
+import { getClientGeminiApiKeys } from '../constants/apiKeys';
 
 export interface MLCandidateProbability {
   index: number;
@@ -160,38 +161,6 @@ export const HERITAGE_CLASS_NAMES: Record<number, string> = Object.fromEntries(
   Object.entries(MODEL_OUTPUT_CLASS_MAP).map(([k, v]) => [Number(k), v.name])
 );
 
-const CLIENT_FALLBACK_API_KEYS: string[] = [
-  'AQ.Ab8RN6Jk8MlTOl3oI4vmjwvL0z7ajfoiIXcwbgjIGTrTyD7gxg',
-  'AQ.Ab8RN6LIPISkq4ti5CxXENpU0Dit1bnUPc_Pu1n5x5tRcqCd5w',
-  'AQ.Ab8RN6IycBr8jHLjBwKhjGRp0dlFnKRVzwhpszJCEasHZsbN_Q',
-  'AQ.Ab8RN6LZLqNc6WejRG2oXLBDmwpww8p_Eb5Rs-5UiyC-GZBVHQ',
-  'AQ.Ab8RN6IwZtNBN9mDYOnFYddmOjq9G-dw70yJR8Go8XbGi9rEXg',
-  'AQ.Ab8RN6KIsnAP-36WxKRMhPLUbHnh0QpyFfqxlg1b43E9uoSB7g',
-  'AQ.Ab8RN6IguxXTBPm3bZ88uNm92FWEJDiZIyDckJimY1dGA9Ao9Q',
-  'AQ.Ab8RN6Ixrj6qGJDE2DvQZriBbAYSSRgKT__MXab7vwzh4q9jDA',
-  'AQ.Ab8RN6Kk6uBFse2oXJOGLqJ48jB_VsIKq8j5-tvAOp-lleb_4g',
-  'AQ.Ab8RN6LdeFh9NcSQRXzYXgaD4YcILofDXHTI8peulX36Umj70g',
-  'AQ.Ab8RN6IdWiNJJ_8WqcP1DbJ8c-kaDvhH_-56vnfOTR7ZWYiV7Q',
-  'AQ.Ab8RN6IhY6BAHRlQPKWsA0Ky3Eg9lIo2Ct6Q1-HyDUKt1Oqh-Q',
-  'AQ.Ab8RN6INdfNYDy7Nf2dWZ3QEF-5IUAL6Je6BK76ooaiAc0yt4A',
-  'AQ.Ab8RN6INE_zZQsA2VOjfjXPwVFnCaAyxvkrHs0Vr0EBO27jA8w',
-  'AQ.Ab8RN6KH7vTeib9oTcYQIgtntqKtpauwPWHbQOvzXPuMJJ7E1A',
-  'AQ.Ab8RN6LJu5fScJ5tXpL4MNH1tCDDmp0aFo4ZPtps9aaVYurtdw',
-  'AQ.Ab8RN6KEk3jcx3JMDX1q_QBcsAv4Nbwix0Yj-Dd8KkkYs9xRuQ',
-];
-
-function getClientApiKeys(): string[] {
-  const envViteKey = (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
-  const envKey = (import.meta.env.GEMINI_API_KEY || '').trim();
-  const keys: string[] = [];
-  if (envViteKey) keys.push(envViteKey);
-  if (envKey && !keys.includes(envKey)) keys.push(envKey);
-  for (const k of CLIENT_FALLBACK_API_KEYS) {
-    if (k && !keys.includes(k)) keys.push(k);
-  }
-  return keys;
-}
-
 /**
  * Trực tiếp nhận diện ảnh di tích qua Gemini Vision API ngay trên trình duyệt (Client-side)
  * Phục vụ hoàn hảo cho môi trường deploy tĩnh như Netlify, Vercel, GitHub Pages...
@@ -200,7 +169,7 @@ async function clientSideGeminiClassify(
   imageDataUrl: string,
   letterboxDiag?: PreprocessDiagnostics
 ): Promise<MLPredictionResult> {
-  const apiKeys = getClientApiKeys();
+  const apiKeys = getClientGeminiApiKeys();
   if (apiKeys.length === 0) {
     throw new Error('Chưa cấu hình API Key Gemini.');
   }
@@ -284,11 +253,19 @@ BẮT BUỘC trả về định dạng JSON thuần túy (không kèm markdown):
 
         if (res.ok) {
           const jsonResp = await res.json();
-          const text = jsonResp?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+          let text = jsonResp?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
           if (text) {
+            // Clean markdown blocks if any
+            if (text.startsWith('```json')) {
+              text = text.replace(/^```json\s*/i, '').replace(/```\s*$/, '').trim();
+            } else if (text.startsWith('```')) {
+              text = text.replace(/^```\s*/i, '').replace(/```\s*$/, '').trim();
+            }
             parsed = JSON.parse(text);
             break;
           }
+        } else {
+          console.warn(`[mlService] Key with model ${modelName} returned status ${res.status}`);
         }
       } catch (err: any) {
         lastError = err;

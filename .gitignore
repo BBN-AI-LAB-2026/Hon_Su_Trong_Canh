@@ -7,3 +7,5 @@ coverage/
 .env*
 .env.local
 !.env.example
+API_Key_List.txt
+!API_Key_List.example.txt

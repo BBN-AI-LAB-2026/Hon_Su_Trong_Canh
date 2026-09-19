@@ -671,10 +671,10 @@ app.post('/api/quiz/reset-rotation', (req, res) => {
   });
 });
 
-// API endpoint: Get status of the 8 rotating API keys
+// API endpoint: Get status of rotating API keys
 app.get('/api/quiz/status', (req, res) => {
   const keys = getApiKeysList();
-  const totalKeys = keys.length || 8;
+  const totalKeys = keys.length || 100;
   const nextGen = globalGenerationCount + 1;
   const remainder = nextGen % totalKeys;
   const nextKeyNumber = remainder === 0 ? totalKeys : remainder;
@@ -684,7 +684,7 @@ app.get('/api/quiz/status', (req, res) => {
     nextGenerationNumber: nextGen,
     nextKeyNumber,
     nextKeyLabel: `API ${nextKeyNumber}`,
-    rule: 'Lần tạo 1: API 1, Lần tạo 2: API 2, ..., Lần tạo n: API n % 8',
+    rule: `Lần tạo 1: API 1, Lần tạo 2: API 2, ..., Lần tạo n: API n % ${totalKeys}`,
     configured: keys.length > 0,
   });
 });

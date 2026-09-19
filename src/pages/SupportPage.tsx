@@ -34,18 +34,18 @@ const SUPPORTED_MONUMENTS: SupportedMonument[] = [
   },
   {
     stt: 3,
-    name: 'Chùa Một Cột',
-    address: 'Phường Ba Đình, Thành phố Hà Nội',
-  },
-  {
-    stt: 4,
     name: 'Cầu Hiền Lương - Sông Bến Hải',
     address: 'Xã Vĩnh Linh, Tỉnh Quảng Trị',
   },
   {
+    stt: 4,
+    name: 'Chùa Một Cột',
+    address: 'Phường Ba Đình, Thành phố Hà Nội',
+  },
+  {
     stt: 5,
-    name: 'Địa đạo Củ Chi',
-    address: 'Xã An Nhơn Tây, Thành phố Hồ Chí Minh',
+    name: 'Dinh Độc Lập',
+    address: 'Phường Bến Thành, Thành phố Hồ Chí Minh',
   },
   {
     stt: 6,
@@ -54,8 +54,8 @@ const SUPPORTED_MONUMENTS: SupportedMonument[] = [
   },
   {
     stt: 7,
-    name: 'Dinh Độc Lập',
-    address: 'Phường Bến Thành, Thành phố Hồ Chí Minh',
+    name: 'Địa đạo Củ Chi',
+    address: 'Xã An Nhơn Tây, Thành phố Hồ Chí Minh',
   },
   {
     stt: 8,
@@ -64,7 +64,7 @@ const SUPPORTED_MONUMENTS: SupportedMonument[] = [
   },
   {
     stt: 9,
-    name: 'Cố đô Huế (Ngọ Môn)',
+    name: 'Ngọ Môn',
     address: 'Phường Phú Xuân, Thành phố Huế',
   },
   {

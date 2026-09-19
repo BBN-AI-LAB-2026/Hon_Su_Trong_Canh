@@ -32,7 +32,7 @@ export const OFFICIAL_HERITAGE_VR_SPACES: EmbeddedVrSpace[] = [
     location: 'Phường Khánh Hội, Thành phố Hồ Chí Minh',
     embedType: 'external_url',
     vrOption: 'C',
-    embedUrl: 'https://bennharong.hochiminh.vn/?fbclid=IwY2xjawUTBGFwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMXJpa0J2N25OWnlXRVNMa01zcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEetoiYBDYIXfpqKpduUXEgLksk-YI0feBpi_U0dtt23neHyM5CFywAf7T4Vkk_aem_YtBglWe-wOr2S3NC5ZSQiw',
+    embedUrl: 'https://bennharong.hochiminh.vn/',
     description: 'Bảo tàng Hồ Chí Minh - Bến Nhà Rồng, nơi Người ra đi tìm đường cứu nước năm 1911.',
     monumentCode: 'BNR',
     addedAt: '2026-09-13T00:00:00.000Z',
